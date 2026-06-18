@@ -23,6 +23,9 @@
   .kpi .val{font-size:1.65rem; font-weight:700; margin-top:6px;}
   .kpi .note{font-size:.74rem; color:var(--muted); margin-top:4px;}
   .kpi.warn .val{color:var(--bad);} .kpi.good .val{color:var(--ok);}
+  .kpi .delta{font-size:.76rem; font-weight:700; margin-top:6px;}
+  .kpi .delta span{color:var(--muted); font-weight:400;}
+  .delta.up{color:var(--ok);} .delta.down{color:var(--bad);} .delta.flat{color:var(--muted);} .delta.new{color:var(--teal);}
   .grid2{display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:16px; margin-top:18px;}
   .panel{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px;}
   .panel h3{font-size:.85rem; color:var(--muted); text-transform:uppercase; letter-spacing:.8px; margin-bottom:12px;}
@@ -45,17 +48,18 @@
 <body>
 
 <h1>CHULA México · Dashboard de Performance</h1>
-<div class="sub">Periodo: 18 de mayo – 16 de junio de 2026 (30 días) · Actualizado: 17-jun (datos en vivo) · Moneda: MXN · Fuentes: GA4 (308396583) · Google Ads (3885943464) · Meta Ads (990068010082684) · Kommo CRM (infochulatulumcom)</div>
+<div class="sub">Periodo: 18 de mayo – 16 de junio de 2026 (30 días) · Comparativo vs. periodo previo (18 abr – 17 may 2026) · Actualizado: 17-jun (datos en vivo) · Moneda: MXN · Fuentes: GA4 (308396583) · Google Ads (3885943464) · Meta Ads (990068010082684) · Kommo CRM (infochulatulumcom)</div>
+<div class="sub" style="margin-top:6px;"><strong>Nota de comparación:</strong> en el periodo previo (18 abr – 17 may) no hubo pauta pagada — las campañas de Meta y Google se activaron el 18-may. Por eso los KPIs de inversión y campaña aparecen como "Nuevo", y los deltas de tráfico/ventas/leads reflejan el efecto de encender la pauta.</div>
 
 <h2>1 · Ventas B2C — Tienda en línea <span>· chulamexico.com</span></h2>
 
 <div class="kpis">
-  <div class="kpi"><div class="lbl">Sesiones (30d)</div><div class="val">6,252</div><div class="note">208/día promedio · +5.9% vs sem. previa</div></div>
-  <div class="kpi"><div class="lbl">Transacciones</div><div class="val">8</div><div class="note">357 add-to-cart · 96 checkouts</div></div>
-  <div class="kpi"><div class="lbl">Ventas</div><div class="val">$9,743</div><div class="note">Ticket promedio $1,218</div></div>
-  <div class="kpi warn"><div class="lbl">Tasa de conversión</div><div class="val">0.13%</div><div class="note">Benchmark moda MX: 1–2%</div></div>
-  <div class="kpi"><div class="lbl">Inversión B2C</div><div class="val">$6,594</div><div class="note">Meta $3,026 · Google $3,568</div></div>
-  <div class="kpi warn"><div class="lbl">ROAS blended</div><div class="val">1.48</div><div class="note">Meta IG 3.17 (GA4) · Google 0.0</div></div>
+  <div class="kpi"><div class="lbl">Sesiones (30d)</div><div class="val">6,252</div><div class="delta up">▲ 61.8% <span>vs. 3,863</span></div><div class="note">208/día promedio</div></div>
+  <div class="kpi"><div class="lbl">Transacciones</div><div class="val">8</div><div class="delta up">▲ 100% <span>vs. 4</span></div><div class="note">357 add-to-cart · 96 checkouts</div></div>
+  <div class="kpi"><div class="lbl">Ventas</div><div class="val">$9,743</div><div class="delta up">▲ 22.7% <span>vs. $7,940</span></div><div class="note">Ticket promedio $1,218</div></div>
+  <div class="kpi warn"><div class="lbl">Tasa de conversión</div><div class="val">0.13%</div><div class="delta up">▲ 0.02 pp <span>vs. 0.10%</span></div><div class="note">Benchmark moda MX: 1–2%</div></div>
+  <div class="kpi"><div class="lbl">Inversión B2C</div><div class="val">$6,594</div><div class="delta new">● Nuevo <span>sin pauta en periodo previo</span></div><div class="note">Meta $3,026 · Google $3,568</div></div>
+  <div class="kpi warn"><div class="lbl">ROAS blended</div><div class="val">1.48</div><div class="delta flat">— n/d <span>sin pauta previa</span></div><div class="note">Meta IG 3.17 (GA4) · Google 0.0</div></div>
 </div>
 
 <div class="grid2">
@@ -94,12 +98,12 @@
 <h2>2 · Prospectos de Franquicia <span>· campaña de mensajes + Kommo CRM</span></h2>
 
 <div class="kpis">
-  <div class="kpi"><div class="lbl">Alcance campaña leads</div><div class="val">16,331</div><div class="note">26,320 impresiones</div></div>
-  <div class="kpi"><div class="lbl">Conversaciones (Meta)</div><div class="val">312</div><div class="note">+12.6% vs sem. previa · 1,788 clics</div></div>
-  <div class="kpi"><div class="lbl">Leads en Kommo</div><div class="val">148</div><div class="note">47% de las conversaciones Meta</div></div>
-  <div class="kpi"><div class="lbl">Inversión leads</div><div class="val">$1,462</div><div class="note">Campaña Franquicias (Meta)</div></div>
-  <div class="kpi good"><div class="lbl">Costo por conversación</div><div class="val">$4.69</div><div class="note">$9.88 por lead en Kommo</div></div>
-  <div class="kpi warn"><div class="lbl">Avance a etapa comercial</div><div class="val">3 / 148</div><div class="note">mayoreo (2) + negociación (1)</div></div>
+  <div class="kpi"><div class="lbl">Alcance campaña leads</div><div class="val">16,331</div><div class="delta new">● Nuevo <span>campaña activada 18-may</span></div><div class="note">26,320 impresiones</div></div>
+  <div class="kpi"><div class="lbl">Conversaciones (Meta)</div><div class="val">312</div><div class="delta new">● Nuevo <span>sin campaña previa</span></div><div class="note">1,788 clics</div></div>
+  <div class="kpi"><div class="lbl">Leads en Kommo</div><div class="val">148</div><div class="delta up">▲ 13.8% <span>vs. 130</span></div><div class="note">47% de las conversaciones Meta</div></div>
+  <div class="kpi"><div class="lbl">Inversión leads</div><div class="val">$1,462</div><div class="delta new">● Nuevo <span>sin pauta previa</span></div><div class="note">Campaña Franquicias (Meta)</div></div>
+  <div class="kpi good"><div class="lbl">Costo por conversación</div><div class="val">$4.69</div><div class="delta flat">— n/d <span>sin campaña previa</span></div><div class="note">$9.88 por lead en Kommo</div></div>
+  <div class="kpi warn"><div class="lbl">Avance a etapa comercial</div><div class="val">3 / 148</div><div class="delta up">▲ +2 <span>vs. 1 / 130</span></div><div class="note">mayoreo (2) + negociación (1)</div></div>
 </div>
 
 <div class="grid2">
@@ -130,6 +134,7 @@
 
   <h3>Lectura general</h3>
   <p>La maquinaria de adquisición sigue afinándose: el tráfico subió a 6,252 sesiones (+5.9% vs la semana previa) y el costo por conversación de franquicias bajó a $4.69 (desde $5.02). Pero los dos embudos siguen rompiéndose en la mitad inferior: la tienda convierte al 0.13% (≈10x debajo del benchmark de moda en México) y solo 3 de 148 leads de franquicia avanzaron a una etapa comercial. Además, la inversión B2C creció a $6,594 (+12.8%) con la misma facturación de $9,743, por lo que el ROAS blended bajó a 1.48 (desde 1.67). Todas las cifras se verificaron en vivo contra GA4, Google Ads, Meta y Kommo el 17 de junio.</p>
+  <p>El comparativo contra el periodo previo (18 abr – 17 may) tiene una lectura importante: en ese mes <strong>no hubo pauta pagada</strong> — las campañas se encendieron el 18-may. Por eso el tráfico subió +61.8% (3,863 → 6,252 sesiones), las transacciones se duplicaron (4 → 8), las ventas crecieron +22.7% ($7,940 → $9,743) y los leads de franquicia subieron +13.8% (130 → 148). En otras palabras, encender la pauta sí movió el volumen — pero a un costo de $6,594 para sumar ~$1,803 de venta incremental, la pauta B2C todavía no se paga sola mientras persistan las fugas de checkout y de conversión de Google.</p>
 
   <h3>B2C — dónde se pierde la venta</h3>
   <p>El embudo muestra el punto exacto de fuga: 6,252 sesiones → 357 add-to-cart (5.7%, sano) → 96 checkouts (27% del carrito, aceptable) → <strong>8 compras (8.3% del checkout, crítico)</strong>. La gente quiere los productos — los agrega al carrito a buena tasa — pero abandona al pagar. Las causas típicas con este patrón: costo de envío revelado tarde (el envío gratis aplica desde $1,500 y el ticket promedio es $1,218 — el cliente descubre el cargo justo al pagar), fricción en el checkout o desconfianza en métodos de pago.</p>
@@ -155,7 +160,7 @@
   <p>1) Conversión de checkout→compra tras los cambios de envío/pagos (meta: &gt;25%). 2) Conversiones reales en Google Ads tras la corrección. 3) Reuniones de franquicia agendadas desde "Interesado" (meta: 4+/semana) y avance a etapas comerciales (hoy 3/148). 4) Conexión de la propiedad de Chula en Clarity y primeras grabaciones de checkout. Este reporte se regenera y publica automáticamente cada semana cruzando las cuatro fuentes.</p>
 </div>
 
-<div class="foot">Generado el 17 de junio de 2026 · Datos en vivo: GA4 vía Supermetrics · Google Ads vía Supermetrics · Meta Marketing API · Kommo API vía Composio · Clarity con tag activo, sin datos propios procesados (conector apunta a otra propiedad). Las "conversiones" reportadas por Google Ads se excluyeron del ROAS por estar mal configuradas.</div>
+<div class="foot">Generado el 17 de junio de 2026 · Datos en vivo: GA4 vía Supermetrics · Google Ads vía Supermetrics · Meta Marketing API · Kommo API vía Composio · Clarity con tag activo, sin datos propios procesados (conector apunta a otra propiedad). Las "conversiones" reportadas por Google Ads se excluyeron del ROAS por estar mal configuradas. Comparativo vs. periodo previo 18 abr – 17 may 2026.</div>
 
 <script>
 const C = {rosa:'#d6336c', rosaS:'rgba(214,51,108,.15)', teal:'#0f766e', amber:'#b45309', gris:'#b8b0a4'};
