@@ -181,7 +181,7 @@ new Chart(funnelKommo,{type:'bar',data:{labels:['Bot contestando','Interesado (a
 
 const leadDays={};
 new Chart(leadsDaily,{type:'bar',data:{labels:days,datasets:[{label:'Leads nuevos',data:days.map(d=>leadDays[d]||0),backgroundColor:C.rosa}]},
- options:{plugins:{legend:{display:false},scales:{y:{beginAtZero:true,ticks:{stepSize:1}}}}});
+ options:{plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,ticks:{stepSize:1}}}}});
 </script>
 </body>
 </html>
